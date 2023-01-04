@@ -1,0 +1,10 @@
+name: Output Event Issues
+on: issues
+jobs: 
+  info:
+    runs-on: windows-latest
+    steps:
+      - name: Output Event Issues
+        env:
+          JSON: ${{ toJSON(github.event) }}
+        run: echo "$JSON"
